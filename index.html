@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tempero & prosa • Lançamento de Pedidos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="client-body">
+
+  <div class="topbar">
+    Tempero & prosa • LANÇAMENTO DE PEDIDOS
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner menu-header">
+      <div class="header-center only-center">
+        <div class="logo-text">
+          <div class="logo-mid">Tempero & prosa • PEDIDOS</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="menu-page">
+    <section class="hero-banner">
+      <div class="hero-banner__content">
+        <p class="hero-kicker">Operação do restaurante</p>
+        <h1>Lançamento rápido de pedidos</h1>
+        <p>
+          Selecione os itens, escolha a mesa ou a entrega e lance o pedido direto para a operação do Tempero & prosa.
+        </p>
+      </div>
+    </section>
+
+    <section class="menu-filters-wrap">
+      <div class="menu-filters">
+        <button class="menu-filter is-active" data-filter="todos" type="button">Todos</button>
+        <button class="menu-filter" data-filter="cafe" type="button">Café da manhã</button>
+        <button class="menu-filter" data-filter="pf" type="button">PFs</button>
+        <button class="menu-filter" data-filter="baiana" type="button">Comida Baiana</button>
+        <button class="menu-filter" data-filter="diferenciados" type="button">Diferenciados</button>
+        <button class="menu-filter" data-filter="porcao" type="button">Porções</button>
+        <button class="menu-filter" data-filter="petisco" type="button">Petiscos</button>
+        <button class="menu-filter" data-filter="bebida" type="button">Bebidas</button>
+        <button class="menu-filter" data-filter="sobremesa" type="button">Sobremesas</button>
+      </div>
+    </section>
+
+    <section class="menu-section" data-section="cafe">
+      <div class="section-heading">
+        <h2>Café da manhã</h2>
+        <p>Opções leves e saborosas para começar bem o seu dia.</p>
+      </div>
+      <div id="cafeList" class="products-grid menu-grid"></div>
+    </section>
+    <section class="menu-section" data-section="pf">
+      <div class="section-heading">
+        <h2>PFs</h2>
+        <p>Pratos feitos com guarnições, salada e adicionais à sua escolha.</p>
+      </div>
+      <div id="pfList" class="products-grid menu-grid"></div>
+    </section>
+    <section class="menu-section" data-section="baiana">
+      <div class="section-heading">
+        <h2>Comida Baiana</h2>
+        <p>Pratos baianos com acompanhamento conforme as opções disponíveis.</p>
+      </div>
+      <div id="baianaList" class="products-grid menu-grid"></div>
+    </section>
+    <section class="menu-section" data-section="diferenciados">
+      <div class="section-heading">
+        <h2>Diferenciados</h2>
+        <p>Pratos especiais preparados conforme a receita da casa.</p>
+      </div>
+      <div id="diferenciadosList" class="products-grid menu-grid"></div>
+    </section>
+    <section class="menu-section" data-section="porcao">
+      <div class="section-heading">
+        <h2>Porções</h2>
+        <p>Porções avulsas para complementar o pedido.</p>
+      </div>
+      <div id="porcaoList" class="products-grid menu-grid"></div>
+    </section>
+    <section class="menu-section" data-section="petisco">
+      <div class="section-heading">
+        <h2>Petiscos</h2>
+        <p>Petiscos disponíveis.</p>
+      </div>
+      <div id="petiscoList" class="products-grid menu-grid"></div>
+    </section>
+    <section class="menu-section" data-section="bebida">
+      <div class="section-heading">
+        <h2>Bebidas</h2>
+        <p>Sucos, refrigerantes, cervejas, águas e café.</p>
+      </div>
+      <div id="bebidaNaoAlcoolicaList" class="products-grid menu-grid"></div>
+    </section>
+
+    <section class="menu-section" data-section="bebida">
+      <div class="section-heading">
+        <h2>Bebidas Alcoólicas</h2>
+        <p>Cervejas</p>
+      </div>
+      <div id="bebidaAlcoolicaList" class="products-grid menu-grid"></div>
+    </section>
+    <section class="menu-section" data-section="sobremesa">
+      <div class="section-heading">
+        <h2>Sobremesas</h2>
+        <p>Opções doces para finalizar o pedido.</p>
+      </div>
+      <div id="sobremesaList" class="products-grid menu-grid"></div>
+    </section>
+  </main>
+
+  <button id="floatingCartBtn" class="floating-cart">
+    <span>Revisar pedido</span>
+    <strong id="floatingCount">0 itens</strong>
+  </button>
+
+  <div id="cartOverlay" class="cart-overlay hidden"></div>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer__head">
+      <h2 class="cart-drawer__title">Lançamento de pedido</h2>
+      <button id="closeCartBtn" class="cart-drawer__close" aria-label="Fechar">×</button>
+    </div>
+
+    <div class="cart-drawer__scroll">
+      <div class="cart-drawer__body">
+        <div id="drawerEmpty" class="empty-state-cart">
+          <h3>Nenhum item selecionado</h3>
+          <p>Adicione os itens que serão lançados para a mesa ou para a entrega.</p>
+        </div>
+
+        <div id="drawerContent" hidden>
+          <section class="checkout-section cart-customer-box" aria-labelledby="checkoutTitle">
+            <div class="checkout-section__heading">
+              <span class="checkout-step">1</span>
+              <div>
+                <h3 id="checkoutTitle">Dados do atendimento</h3>
+                <p>Informe se o lançamento é para uma mesa ou para uma entrega.</p>
+              </div>
+            </div>
+
+            <div class="order-type-switch" role="radiogroup" aria-label="Tipo do pedido">
+              <label class="order-type-option is-active">
+                <input type="radio" name="orderType" value="restaurante" checked />
+                <span>Mesa</span>
+              </label>
+              <label class="order-type-option">
+                <input type="radio" name="orderType" value="entrega" />
+                <span>Entrega</span>
+              </label>
+            </div>
+
+            <div id="restaurantFields" class="checkout-fields">
+              <div class="field-group">
+                <label>Mesa *</label>
+
+                <button id="openTablePickerBtn" class="table-picker-trigger" type="button">
+                  <span>
+                    <strong id="selectedTableLabel">Selecionar mesa</strong>
+                    <small id="selectedTableState">Consulte mesas livres e ocupadas</small>
+                  </span>
+                  <span class="table-picker-trigger__arrow" aria-hidden="true">›</span>
+                </button>
+
+                <select id="tableNumber" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                  <option value="">Selecione a mesa</option>
+                </select>
+
+                <div id="selectedTableInfo" class="selected-table-info hidden" aria-live="polite"></div>
+              </div>
+
+              <div id="customerNameGroup" class="field-group">
+                <label for="customerName">Cliente da mesa *</label>
+                <input type="text" id="customerName" autocomplete="off" placeholder="Nome do cliente" />
+                <small id="customerNameHint" class="field-hint">
+                  Em mesa livre, informe o cliente. Em mesa ocupada, o Tempero & prosa carrega o atendimento atual.
+                </small>
+              </div>
+            </div>
+
+            <div id="deliveryFields" class="checkout-fields hidden" aria-hidden="true">
+              <div class="field-group">
+                <label for="deliveryName">Cliente da entrega *</label>
+                <input type="text" id="deliveryName" autocomplete="name" placeholder="Nome do cliente" />
+              </div>
+
+              <div class="field-group">
+                <label for="deliveryPhone">Telefone *</label>
+                <input type="tel" id="deliveryPhone" autocomplete="tel" inputmode="numeric" maxlength="15" placeholder="(71) 99999-9999" />
+              </div>
+
+              <div class="field-group">
+                <label for="deliveryAddress">Endereço *</label>
+                <input type="text" id="deliveryAddress" autocomplete="street-address" placeholder="Rua, número, complemento" />
+              </div>
+
+              <div class="checkout-grid-2">
+                <div class="field-group">
+                  <label for="deliveryNeighborhood">Bairro</label>
+                  <input type="text" id="deliveryNeighborhood" placeholder="Bairro" />
+                </div>
+
+                <div class="field-group">
+                  <label for="deliveryReference">Referência</label>
+                  <input type="text" id="deliveryReference" placeholder="Próximo a..." />
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="deliveryScheduleType">Horário</label>
+                <select id="deliveryScheduleType">
+                  <option value="asap">O quanto antes</option>
+                  <option value="scheduled">Agendar horário</option>
+                </select>
+              </div>
+
+              <div id="scheduledTimeField" class="field-group hidden">
+                <label for="deliveryTime">Horário agendado *</label>
+                <input type="time" id="deliveryTime" />
+              </div>
+
+              <div class="field-group">
+                <label for="paymentMethod">Forma de pagamento *</label>
+                <select id="paymentMethod">
+                  <option value="">Selecione</option>
+                  <option value="pix">PIX</option>
+                  <option value="dinheiro">Dinheiro</option>
+                  <option value="debito">Débito</option>
+                  <option value="credito">Crédito</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="checkout-section" aria-labelledby="itemsTitle">
+            <div class="checkout-section__heading compact">
+              <span class="checkout-step">2</span>
+              <div>
+                <h3 id="itemsTitle">Itens do lançamento</h3>
+                <p>Revise quantidades, opções e observações.</p>
+              </div>
+            </div>
+            <div id="cartItems" class="cart-list"></div>
+          </section>
+
+          <section class="checkout-section" aria-labelledby="finishTitle">
+            <div class="checkout-section__heading compact">
+              <span class="checkout-step">3</span>
+              <div>
+                <h3 id="finishTitle">Revisão final</h3>
+                <p>O subtotal não inclui os 10% de serviço.</p>
+              </div>
+            </div>
+
+            <div id="cartObsBox" class="cart-note-box">
+              <label for="obsPedido">Observação geral do pedido</label>
+              <textarea id="obsPedido" rows="3" placeholder="Ex.: trazer tudo junto"></textarea>
+            </div>
+
+            <div class="cart-subtotal" aria-live="polite">
+              <span>Subtotal deste lançamento</span>
+              <strong id="cartSubtotal">R$ 0,00</strong>
+            </div>
+
+            <div id="orderStatusMessage" class="order-status hidden" role="status" aria-live="polite"></div>
+
+            <div class="cart-actions-top">
+              <button id="clearCartBtn" class="btn-secondary danger-soft" type="button">Remover tudo</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div id="cartFooter" class="cart-drawer__footer" hidden>
+      <button id="finishOrderBtn" class="btn-primary full-btn" type="button">LANÇAR PEDIDO</button>
+    </div>
+  </aside>
+
+
+  <div id="tablePickerModal" class="order-modal hidden" role="dialog" aria-modal="true" aria-labelledby="tablePickerTitle">
+    <div class="order-modal__card table-picker-modal-card">
+      <button id="closeTablePickerBtn" class="order-modal__close" type="button" aria-label="Fechar">×</button>
+      <p class="order-modal__eyebrow">Mesas do restaurante</p>
+      <h2 id="tablePickerTitle">Selecionar mesa</h2>
+
+      <div class="table-picker-toolbar">
+        <div class="table-picker-filters" role="group" aria-label="Filtrar mesas">
+          <button class="table-filter-btn is-active" type="button" data-table-filter="todos">Todas</button>
+          <button class="table-filter-btn" type="button" data-table-filter="livre">Livres</button>
+          <button class="table-filter-btn" type="button" data-table-filter="ocupada">Ocupadas</button>
+        </div>
+        <button id="refreshTablesBtn" class="btn-secondary table-refresh-btn" type="button">Atualizar</button>
+      </div>
+
+      <div class="table-legend" aria-label="Legenda">
+        <span><i class="table-legend-dot table-legend-dot--free"></i> Livre</span>
+        <span><i class="table-legend-dot table-legend-dot--occupied"></i> Ocupada</span>
+      </div>
+
+      <div id="tablePickerStatus" class="table-picker-status" role="status" aria-live="polite"></div>
+      <div id="tablePickerGrid" class="table-picker-grid"></div>
+
+      <p class="table-picker-help">
+        Toque em uma mesa ocupada para consultar cliente, atendimento e valor atual antes de adicionar o novo pedido.
+      </p>
+    </div>
+  </div>
+
+
+  <div id="confirmOrderModal" class="order-modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirmOrderTitle">
+    <div class="order-modal__card">
+      <button id="closeConfirmModalBtn" class="order-modal__close" type="button" aria-label="Fechar">×</button>
+      <p class="order-modal__eyebrow">Confirmar lançamento</p>
+      <h2 id="confirmOrderTitle">Revise antes de lançar</h2>
+      <div id="confirmOrderSummary" class="order-confirm-summary"></div>
+      <div class="order-modal__actions">
+        <button id="backConfirmBtn" class="btn-secondary" type="button">Voltar</button>
+        <button id="confirmSendBtn" class="btn-primary" type="button">Confirmar lançamento</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="successOrderModal" class="order-modal hidden" role="dialog" aria-modal="true" aria-labelledby="successOrderTitle">
+    <div class="order-modal__card order-modal__card--success">
+      <p class="order-success-icon">✓</p>
+      <h2 id="successOrderTitle">Pedido lançado!</h2>
+      <div id="successOrderSummary" class="order-success-summary"></div>
+      <a id="whatsappFallbackLink" class="btn-primary full-btn order-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer">Compartilhar no WhatsApp</a>
+      <button id="closeSuccessModalBtn" class="btn-secondary full-btn" type="button">Fechar</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <p class="site-footer__eyebrow">Tempero & prosa</p>
+        <h3 class="site-footer__title">Lançamento de Pedidos</h3>
+        <p class="site-footer__text">
+          Terminal operacional para lançamento de pedidos de mesa e entrega.
+        </p>
+      </div>
+
+      <div class="site-footer__center">
+        <div class="site-footer__divider"></div>
+        <p class="site-footer__copy">
+          © 2026 Tempero & prosa. Operação do restaurante.
+        </p>
+      </div>
+
+      <div class="site-footer__actions">
+        <p class="site-footer__label">Área restrita</p>
+        <button id="adminShortcut" class="footer-admin-btn">Admin</button>
+      </div>
+    </div>
+  </footer>
+
+  <div
+  id="occupiedTableModal"
+  class="occupied-table-modal hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="occupiedTableModalTitle"
+>
+  <div class="occupied-table-modal__backdrop"></div>
+
+  <div class="occupied-table-modal__card">
+    <div class="occupied-table-modal__icon">
+      !
+    </div>
+
+    <span class="occupied-table-modal__eyebrow">
+      MESA OCUPADA
+    </span>
+
+    <h2
+      id="occupiedTableModalTitle"
+      class="occupied-table-modal__title"
+    >
+      Mesa ocupada
+    </h2>
+
+    <p class="occupied-table-modal__text">
+      Já existe um atendimento aberto nesta mesa.
+    </p>
+
+    <div class="occupied-table-modal__notice">
+      O novo lançamento será adicionado à
+      comanda atual.
+    </div>
+
+    <div class="occupied-table-modal__actions">
+      <button
+        id="cancelOccupiedTableBtn"
+        class="occupied-table-modal__button
+               occupied-table-modal__button--secondary"
+        type="button"
+      >
+        VOLTAR
+      </button>
+
+      <button
+        id="continueOccupiedTableBtn"
+        class="occupied-table-modal__button
+               occupied-table-modal__button--primary"
+        type="button"
+      >
+        CONTINUAR
+      </button>
+    </div>
+  </div>
+</div>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="admin-body">
+  <header class="topbar">
+    <div>
+      <h1>Painel Admin</h1>
+      <p class="subtitle">Controle simples do cardápio por data</p>
+    </div>
+    <div class="admin-actions-top">
+      <span id="lastConfiguredInfo" class="last-configured">Última data configurada: --</span>
+      <button id="logoutBtn" class="ghost-btn">Sair</button>
+    </div>
+  </header>
+
+  <main class="container admin-container">
+    <section class="hero-card">
+      <div class="admin-toolbar">
+        <div class="field-group">
+          <label for="adminDate">Escolha a data</label>
+          <input type="date" id="adminDate" />
+        </div>
+
+        <button id="loadDateBtn" class="secondary-btn">Carregar data</button>
+        <button id="copyPreviousBtn" class="secondary-btn">Copiar dia anterior</button>
+        <button id="markAllBtn" class="secondary-btn">Marcar todos</button>
+        <button id="unmarkAllBtn" class="secondary-btn">Desmarcar todos</button>
+        <button id="saveMenuBtn" class="primary-btn">Salvar cardápio do dia</button>
+      </div>
+
+      <div class="admin-search-box">
+
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+          <path d="M20 20L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+
+        <input type="text" id="adminSearch" placeholder="Pesquisar prato..." />
+
+      </div>
+
+      <p id="adminStatus" class="status-message"></p>
+    </section>
+
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>Café da manhã</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <div id="adminCafeList" class="admin-list"></div>
+      </div>
+    </section>
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>PFs</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <div id="adminPfList" class="admin-list"></div>
+      </div>
+    </section>
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>Comida Baiana</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <div id="adminBaianaList" class="admin-list"></div>
+      </div>
+    </section>
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>Diferenciados</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <div id="adminDiferenciadosList" class="admin-list"></div>
+      </div>
+    </section>
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>Porções</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <div id="adminPorcaoList" class="admin-list"></div>
+      </div>
+    </section>
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>Petiscos</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <div id="adminPetiscoList" class="admin-list"></div>
+      </div>
+    </section>
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>Bebidas</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <h3>Não alcoólicas</h3>
+        <div id="adminBebidaNaoAlcoolicaList" class="admin-list"></div>
+
+        <h3>Alcoólicas</h3>
+        <div id="adminBebidaAlcoolicaList" class="admin-list"></div>
+      </div>
+    </section>
+    <section class="admin-section accordion">
+      <div class="accordion-header">
+        <h2>Sobremesas</h2>
+        <span class="accordion-arrow"></span>
+      </div>
+
+      <div class="accordion-body">
+        <div id="adminSobremesaList" class="admin-list"></div>
+      </div>
+    </section>
+
+    <section class="admin-section">
+      <h2 class="section-title">Cardápios já preparados</h2>
+
+      <div id="savedMenusList" class="saved-menus"></div>
+    </section>
+
+  </main>
+
+  <script type="module" src="assets/js/admin.js"></script>
+</body>
+
+</html>
