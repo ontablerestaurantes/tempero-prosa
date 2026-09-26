@@ -488,6 +488,16 @@ export const produtos = [
     opcoes: opcoesRefrigerante1L()
   },
   {
+  id: 127,
+  nome: "Coca-Cola KS",
+  categoria: "bebida",
+  subcategoria: "nao_alcoolica",
+  preco: 6,
+  imagem: "assets/img/coca-ks-290ml.webp",
+  descricao: "Escolha o tamanho da Coca-Cola.",
+  opcoes: opcoesCocaKS()
+},
+  {
     id: 103,
     nome: "Refrigerante Lata",
     categoria: "bebida",
@@ -497,6 +507,16 @@ export const produtos = [
     descricao: "Refrigerante em lata. Escolha a marca disponível.",
     opcoes: opcoesRefrigeranteLata()
   },
+  {
+  id: 128,
+  nome: "Refrigerante IT Lata",
+  categoria: "bebida",
+  subcategoria: "nao_alcoolica",
+  preco: 5,
+  imagem: "assets/img/refrigerante-it-lata.webp",
+  descricao: "Refrigerante IT em lata.",
+  opcoes: []
+},
   {
     id: 116,
     nome: "Red Bull Lata",
@@ -804,6 +824,29 @@ function opcoesRefrigeranteLata() {
         { nome: "Sprite Zero", imagem: "assets/img/sprite-zero.jpg" },
         { nome: "Coca-Cola Zero", imagem: "assets/img/coca-zero.jpg" },
         { nome: "Pepsi", imagem: "assets/img/pepsi.jpg" }
+      ]
+    }
+  ];
+}
+
+function opcoesCocaKS() {
+  return [
+    {
+      titulo: "Tamanho",
+      tipo: "radio",
+      obrigatorio: true,
+      subtitulo: "Escolha 1 tamanho",
+      itens: [
+        {
+          nome: "290 ml",
+          imagem: "assets/img/coca-ks-290ml.webp",
+          precoVariacao: 6
+        },
+        {
+          nome: "1 Litro",
+          imagem: "assets/img/coca-ks-1l.webp",
+          precoVariacao: 12
+        }
       ]
     }
   ];
