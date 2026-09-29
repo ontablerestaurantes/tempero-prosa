@@ -179,14 +179,14 @@ export const produtos = [
     opcoes: []
   },
   {
-  id: 34,
-  nome: "Peixe Frito",
-  categoria: "pratos_individuais",
-  preco: 25,
-  imagem: "assets/img/peixe-frito-individual.webp",
-  descricao: "Acompanha arroz, feijão de caldo e macarrão.",
-  opcoes: []
-},
+    id: 34,
+    nome: "Peixe Frito",
+    categoria: "pratos_individuais",
+    preco: 25,
+    imagem: "assets/img/peixe-frito-individual.webp",
+    descricao: "Acompanha arroz, feijão de caldo e macarrão.",
+    opcoes: []
+  },
   {
     id: 30,
     nome: "Feijoada Individual",
@@ -303,14 +303,14 @@ export const produtos = [
     opcoes: []
   },
   {
-  id: 87,
-  nome: "Porção de Salada",
-  categoria: "porcao_guarnicao",
-  preco: 5,
-  imagem: "assets/img/salada-mista.webp",
-  descricao: "Porção avulsa de salada mista.",
-  opcoes: []
-},
+    id: 87,
+    nome: "Porção de Salada",
+    categoria: "porcao_guarnicao",
+    preco: 5,
+    imagem: "assets/img/salada-mista.webp",
+    descricao: "Porção avulsa de salada mista.",
+    opcoes: []
+  },
   {
     id: 72,
     nome: "Porção de Feijão",
@@ -506,15 +506,15 @@ export const produtos = [
     opcoes: opcoesRefrigerante1L()
   },
   {
-  id: 127,
-  nome: "Coca-Cola KS",
-  categoria: "bebida",
-  subcategoria: "nao_alcoolica",
-  preco: 6,
-  imagem: "assets/img/coca-ks-290ml.webp",
-  descricao: "Escolha o tamanho da Coca-Cola.",
-  opcoes: opcoesCocaKS()
-},
+    id: 127,
+    nome: "Coca-Cola KS",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 6,
+    imagem: "assets/img/coca-ks-290ml.webp",
+    descricao: "Escolha o tamanho da Coca-Cola.",
+    opcoes: opcoesCocaKS()
+  },
   {
     id: 103,
     nome: "Refrigerante Lata",
@@ -526,15 +526,15 @@ export const produtos = [
     opcoes: opcoesRefrigeranteLata()
   },
   {
-  id: 128,
-  nome: "Refrigerante IT Lata",
-  categoria: "bebida",
-  subcategoria: "nao_alcoolica",
-  preco: 5,
-  imagem: "assets/img/refrigerante-it-lata.webp",
-  descricao: "Refrigerante IT em lata.",
-  opcoes: []
-},
+    id: 128,
+    nome: "Refrigerante IT Lata",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 5,
+    imagem: "assets/img/refrigerante-it-lata.webp",
+    descricao: "Refrigerante IT em lata.",
+    opcoes: []
+  },
   {
     id: 116,
     nome: "Red Bull Lata",
@@ -563,6 +563,16 @@ export const produtos = [
     preco: 5,
     imagem: "assets/img/agua-gas.jpg",
     descricao: "Água mineral com gás.",
+    opcoes: []
+  },
+  {
+    id: 88,
+    nome: "Água Tônica",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 6,
+    imagem: "assets/img/agua-tonica.webp",
+    descricao: "Água tônica gelada.",
     opcoes: []
   },
   {
@@ -764,9 +774,21 @@ function opcoesCafe() {
       obrigatorio: true,
       subtitulo: "Escolha 1 opção",
       itens: [
-        { nome: "Café preto mini — 50 ml", imagem: "assets/img/cafe-puro.jpg", precoVariacao: 0.5 },
-        { nome: "Café preto médio — 200 ml", imagem: "assets/img/cafe-puro.jpg", precoVariacao: 3 },
-        { nome: "Café com leite médio — 200 ml", imagem: "assets/img/cafe-com-leite2.jpg", precoVariacao: 4 }
+        {
+          nome: "Café preto mini — 50 ml",
+          imagem: "assets/img/cafe-puro.jpg",
+          precoVariacao: 0.5
+        },
+        {
+          nome: "Café preto médio — 200 ml",
+          imagem: "assets/img/cafe-puro.jpg",
+          precoVariacao: 3
+        },
+        {
+          nome: "Café com leite médio — 200 ml",
+          imagem: "assets/img/cafe-com-leite2.jpg",
+          precoVariacao: 4
+        }
       ]
     }
   ];
@@ -780,10 +802,26 @@ function opcoesCafeDaManha() {
       obrigatorio: true,
       subtitulo: "Escolha 1 proteína",
       itens: [
-        { nome: "Ovos", imagem: "assets/img/ovo-frito.jpg", precoVariacao: 15 },
-        { nome: "Ensopado de boi", imagem: "assets/img/ensboi.jpg", precoVariacao: 15 },
-        { nome: "Ensopado de frango", imagem: "assets/img/ensfrango.jpg", precoVariacao: 15 },
-        { nome: "Carne de sertão frita", imagem: "assets/img/carne-sertao-frita.png", precoVariacao: 18 }
+        {
+          nome: "Ovos",
+          imagem: "assets/img/ovo-frito.jpg",
+          precoVariacao: 15
+        },
+        {
+          nome: "Ensopado de boi",
+          imagem: "assets/img/ensboi.jpg",
+          precoVariacao: 15
+        },
+        {
+          nome: "Ensopado de frango",
+          imagem: "assets/img/ensfrango.jpg",
+          precoVariacao: 15
+        },
+        {
+          nome: "Carne de sertão frita",
+          imagem: "assets/img/carne-sertao-frita.png",
+          precoVariacao: 18
+        }
       ]
     }
   ];
@@ -809,8 +847,16 @@ function opcoesSuco() {
       obrigatorio: true,
       subtitulo: "Escolha 1 tamanho",
       itens: [
-        { nome: "200 ml", imagem: "assets/img/copo-300ml.jpg", precoVariacao: 3 },
-        { nome: "300 ml", imagem: "assets/img/copo-300ml.jpg", precoVariacao: 4 }
+        {
+          nome: "200 ml",
+          imagem: "assets/img/copo-300ml.jpg",
+          precoVariacao: 3
+        },
+        {
+          nome: "300 ml",
+          imagem: "assets/img/copo-300ml.jpg",
+          precoVariacao: 4
+        }
       ]
     }
   ];
@@ -878,9 +924,18 @@ function opcoesCervejaSemAlcool() {
       obrigatorio: true,
       subtitulo: "Escolha 1 opção",
       itens: [
-        { nome: "Itaipava", imagem: "assets/img/cerveja-sem-alcool.webp" },
-        { nome: "Black Princess", imagem: "assets/img/cerveja-sem-alcool.webp" },
-        { nome: "Império", imagem: "assets/img/imperio.jpg" }
+        {
+          nome: "Itaipava",
+          imagem: "assets/img/cerveja-sem-alcool.webp"
+        },
+        {
+          nome: "Black Princess",
+          imagem: "assets/img/cerveja-sem-alcool.webp"
+        },
+        {
+          nome: "Império",
+          imagem: "assets/img/imperio.jpg"
+        }
       ]
     }
   ];
