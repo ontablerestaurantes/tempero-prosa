@@ -179,6 +179,15 @@ export const produtos = [
     opcoes: []
   },
   {
+    id: 189,
+    nome: "Peixe Frito",
+    categoria: "pratos_individuais",
+    preco: 25,
+    imagem: "assets/img/dose-pitu.webp",
+    descricao: "Peixe Frito, Arroz, Feijão e Macarrão.",
+    opcoes: []
+  },
+  {
     id: 30,
     nome: "Feijoada Individual",
     categoria: "feijoada",
