@@ -72,7 +72,7 @@ export const produtos = [
   },
   {
     id: 21,
-    nome: "Frango Frito",
+    nome: "Frango Assado",
     categoria: "pratos_individuais",
     preco: 20,
     imagem: "assets/img/frango-frito.jpg",
