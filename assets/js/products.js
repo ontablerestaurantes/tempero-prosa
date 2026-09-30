@@ -188,6 +188,15 @@ export const produtos = [
     opcoes: []
   },
   {
+    id: 36,
+    nome: "Moqueca de Marisco",
+    categoria: "pratos_individuais",
+    preco: 25,
+    imagem: "assets/img/moqueca-marisco.jpg",
+    descricao: "Moqueca de marisco individual.",
+    opcoes: []
+  },
+  {
     id: 30,
     nome: "Feijoada Individual",
     categoria: "feijoada",
@@ -507,13 +516,23 @@ export const produtos = [
   },
   {
     id: 127,
-    nome: "Coca-Cola KS",
+    nome: "Coca-Cola KS 290 ml",
     categoria: "bebida",
     subcategoria: "nao_alcoolica",
     preco: 6,
     imagem: "assets/img/coca-ks-290ml.webp",
-    descricao: "Escolha o tamanho da Coca-Cola.",
-    opcoes: opcoesCocaKS()
+    descricao: "Coca-Cola KS 290 ml gelada.",
+    opcoes: []
+  },
+  {
+    id: 129,
+    nome: "Coca-Cola KS 1 Litro",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 12,
+    imagem: "assets/img/coca-ks-1l.webp",
+    descricao: "Coca-Cola KS 1 litro gelada.",
+    opcoes: []
   },
   {
     id: 103,
@@ -774,21 +793,9 @@ function opcoesCafe() {
       obrigatorio: true,
       subtitulo: "Escolha 1 opção",
       itens: [
-        {
-          nome: "Café preto mini — 50 ml",
-          imagem: "assets/img/cafe-puro.jpg",
-          precoVariacao: 0.5
-        },
-        {
-          nome: "Café preto médio — 200 ml",
-          imagem: "assets/img/cafe-puro.jpg",
-          precoVariacao: 3
-        },
-        {
-          nome: "Café com leite médio — 200 ml",
-          imagem: "assets/img/cafe-com-leite2.jpg",
-          precoVariacao: 4
-        }
+        { nome: "Café preto mini — 50 ml", imagem: "assets/img/cafe-puro.jpg", precoVariacao: 0.5 },
+        { nome: "Café preto médio — 200 ml", imagem: "assets/img/cafe-puro.jpg", precoVariacao: 3 },
+        { nome: "Café com leite médio — 200 ml", imagem: "assets/img/cafe-com-leite2.jpg", precoVariacao: 4 }
       ]
     }
   ];
@@ -802,26 +809,10 @@ function opcoesCafeDaManha() {
       obrigatorio: true,
       subtitulo: "Escolha 1 proteína",
       itens: [
-        {
-          nome: "Ovos",
-          imagem: "assets/img/ovo-frito.jpg",
-          precoVariacao: 15
-        },
-        {
-          nome: "Ensopado de boi",
-          imagem: "assets/img/ensboi.jpg",
-          precoVariacao: 15
-        },
-        {
-          nome: "Ensopado de frango",
-          imagem: "assets/img/ensfrango.jpg",
-          precoVariacao: 15
-        },
-        {
-          nome: "Carne de sertão frita",
-          imagem: "assets/img/carne-sertao-frita.png",
-          precoVariacao: 18
-        }
+        { nome: "Ovos", imagem: "assets/img/ovo-frito.jpg", precoVariacao: 15 },
+        { nome: "Ensopado de boi", imagem: "assets/img/ensboi.jpg", precoVariacao: 15 },
+        { nome: "Ensopado de frango", imagem: "assets/img/ensfrango.jpg", precoVariacao: 15 },
+        { nome: "Carne de sertão frita", imagem: "assets/img/carne-sertao-frita.png", precoVariacao: 18 }
       ]
     }
   ];
@@ -847,16 +838,8 @@ function opcoesSuco() {
       obrigatorio: true,
       subtitulo: "Escolha 1 tamanho",
       itens: [
-        {
-          nome: "200 ml",
-          imagem: "assets/img/copo-300ml.jpg",
-          precoVariacao: 3
-        },
-        {
-          nome: "300 ml",
-          imagem: "assets/img/copo-300ml.jpg",
-          precoVariacao: 4
-        }
+        { nome: "200 ml", imagem: "assets/img/copo-300ml.jpg", precoVariacao: 3 },
+        { nome: "300 ml", imagem: "assets/img/copo-300ml.jpg", precoVariacao: 4 }
       ]
     }
   ];
@@ -893,29 +876,6 @@ function opcoesRefrigeranteLata() {
   ];
 }
 
-function opcoesCocaKS() {
-  return [
-    {
-      titulo: "Tamanho",
-      tipo: "radio",
-      obrigatorio: true,
-      subtitulo: "Escolha 1 tamanho",
-      itens: [
-        {
-          nome: "290 ml",
-          imagem: "assets/img/coca-ks-290ml.webp",
-          precoVariacao: 6
-        },
-        {
-          nome: "1 Litro",
-          imagem: "assets/img/coca-ks-1l.webp",
-          precoVariacao: 12
-        }
-      ]
-    }
-  ];
-}
-
 function opcoesCervejaSemAlcool() {
   return [
     {
@@ -924,18 +884,9 @@ function opcoesCervejaSemAlcool() {
       obrigatorio: true,
       subtitulo: "Escolha 1 opção",
       itens: [
-        {
-          nome: "Itaipava",
-          imagem: "assets/img/cerveja-sem-alcool.webp"
-        },
-        {
-          nome: "Black Princess",
-          imagem: "assets/img/cerveja-sem-alcool.webp"
-        },
-        {
-          nome: "Império",
-          imagem: "assets/img/imperio.jpg"
-        }
+        { nome: "Itaipava", imagem: "assets/img/cerveja-sem-alcool.webp" },
+        { nome: "Black Princess", imagem: "assets/img/cerveja-sem-alcool.webp" },
+        { nome: "Império", imagem: "assets/img/imperio.jpg" }
       ]
     }
   ];
