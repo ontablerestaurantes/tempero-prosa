@@ -203,7 +203,7 @@ export const produtos = [
     opcoes: []
   },
   {
-    id: 56, nome: "Churrasco (2 pessoas)", categoria: "churrasco", preco: 45,
+    id: 56, nome: "Churrasco (2 pessoas)", categoria: "churrasco", preco: 55,
     imagem: "assets/img/churrasco.png", descricao: "Acompanha arroz, feijão tropeiro e salada. Serve 2 pessoas.",
     opcoes: []
   },
