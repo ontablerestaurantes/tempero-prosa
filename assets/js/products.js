@@ -801,7 +801,7 @@ export const produtos = [
     nome: "Itaipava 600 ml",
     categoria: "cerveja_600",
     subcategoria: "alcoolica",
-    preco: 18,
+    preco: 8,
     imagem: "assets/img/itaipava_600.jpg",
     descricao: "Itaipava 600 ml gelada.",
     opcoes: []
