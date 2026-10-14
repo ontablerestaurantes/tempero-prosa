@@ -796,6 +796,18 @@ export const produtos = [
     descricao: "Amstel 600 ml gelada.",
     opcoes: []
   },
+  
+{
+  id: 138,
+  nome: "Brahma Chopp 600 ml",
+  categoria: "cerveja_600",
+  subcategoria: "alcoolica",
+  preco: 12,
+  imagem: "assets/img/brahma-600.webp",
+  descricao: "Brahma Chopp 600 ml gelada.",
+  opcoes: []
+},
+
   {
     id: 114,
     nome: "Itaipava 600 ml",
