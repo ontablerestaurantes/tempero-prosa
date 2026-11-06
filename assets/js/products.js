@@ -153,9 +153,6 @@ export const produtos = [
     imagem: "assets/img/feijao.jpg", descricao: "Porção avulsa de feijão.", opcoes: [] },
   { id: 73, nome: "Porção Macarrão", categoria: "porcao_guarnicao", preco: 8,
     imagem: "assets/img/macarrao.jpg", descricao: "Porção avulsa de macarrão.", opcoes: [] },
-  // NOVO: Porção de ovo — ID 140
-  { id: 140, nome: "Porção Ovo", categoria: "porcao_guarnicao", preco: 3,
-    imagem: "assets/img/porcao-ovo.webp", descricao: "Porção avulsa de ovo.", opcoes: [] },
 
   // =========================
   // PORÇÕES — PROTEÍNAS
@@ -182,6 +179,9 @@ export const produtos = [
     imagem: "assets/img/bife-molho.jpg", descricao: "Porção avulsa de bife de carne ao molho.", opcoes: [] },
   { id: 85, nome: "Porção Carne do Sol", categoria: "porcao_proteina", preco: 15,
     imagem: "assets/img/carne-sol.jpg", descricao: "Porção avulsa de carne do sol.", opcoes: [] },
+  // NOVO: Porção de ovo — ID 140
+  { id: 140, nome: "Porção Ovo", categoria: "porcao_proteina", preco: 3,
+    imagem: "assets/img/porcao-ovo.webp", descricao: "Porção avulsa de ovo.", opcoes: [] },
 
   // =========================
   // PETISCOS
@@ -244,6 +244,51 @@ export const produtos = [
     imagem: "assets/img/brahma-zero-alcool.webp", descricao: "Brahma sem álcool gelada.", opcoes: [] },
   { id: 125, nome: "Refrigerante Copo", categoria: "bebida", subcategoria: "nao_alcoolica", preco: 4,
     imagem: "assets/img/refri-copo.jpg", descricao: "Refrigerante servido no copo.", opcoes: [] },
+  
+  {
+    id: 147,
+    nome: "H20",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 10,
+    imagem: "assets/img/h20.webp",
+    descricao: "Bebida H20 gelada.",
+    opcoes: []
+  },
+
+  {
+    id: 148,
+    nome: "Monster",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 15,
+    imagem: "assets/img/monster.webp",
+    descricao: "Energético Monster gelado.",
+    opcoes: []
+  },
+
+  {
+    id: 149,
+    nome: "TNT Energy Drink",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 10,
+    imagem: "assets/img/tnt-energy-drink.webp",
+    descricao: "Energético TNT gelado.",
+    opcoes: []
+  },
+
+  {
+    id: 150,
+    nome: "Schweppes Citrus",
+    categoria: "bebida",
+    subcategoria: "nao_alcoolica",
+    preco: 8,
+    imagem: "assets/img/schweppes-citrus.webp",
+    descricao: "Schweppes Citrus gelada.",
+    opcoes: []
+  },
+
   { id: 109, nome: "Café", categoria: "bebida", subcategoria: "nao_alcoolica", preco: 0.5,
     imagem: "assets/img/cafe.jpg", descricao: "Escolha a opção de café e o tamanho.", opcoes: opcoesCafe() },
 
@@ -262,6 +307,18 @@ export const produtos = [
     imagem: "assets/img/imperio.jpg", descricao: "Império long neck gelada.", opcoes: [] },
   { id: 110, nome: "51 Ice Long Neck", categoria: "cerveja_long_neck", subcategoria: "alcoolica", preco: 10,
     imagem: "assets/img/ice_long.webp", descricao: "51 Ice long neck gelada.", opcoes: [] },
+  
+  {
+    id: 146,
+    nome: "Heineken Ultimate Long Neck",
+    categoria: "cerveja_long_neck",
+    subcategoria: "alcoolica",
+    preco: 12,
+    imagem: "assets/img/heineken-ultimate.webp",
+    descricao: "Heineken Ultimate Long Neck gelada.",
+    opcoes: []
+  },
+
   // NOVO: Malzebier — R$ 10,00 — ID 139 (cadastrada em long neck)
   { id: 139, nome: "Malzebier", categoria: "cerveja_long_neck", subcategoria: "alcoolica", preco: 10,
     imagem: "assets/img/malzebier.webp", descricao: "Cerveja Malzebier.", opcoes: [] },
@@ -282,6 +339,18 @@ export const produtos = [
   // Mantida inclusão anterior: Brahma Chopp 600 ml — ID 138
   { id: 138, nome: "Brahma Chopp 600 ml", categoria: "cerveja_600", subcategoria: "alcoolica", preco: 12,
     imagem: "assets/img/brahma-600.webp", descricao: "Brahma Chopp 600 ml gelada.", opcoes: [] },
+  
+  {
+    id: 145,
+    nome: "Stella Pure Gold 600 ml",
+    categoria: "cerveja_600",
+    subcategoria: "alcoolica",
+    preco: 20,
+    imagem: "assets/img/stella-pure-gold-600.webp",
+    descricao: "Stella Pure Gold 600 ml gelada.",
+    opcoes: []
+  },
+
 
   // =========================
   // DOSES
