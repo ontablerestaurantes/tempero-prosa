@@ -1,7 +1,7 @@
 
 export const produtos = [
   // =========================
-  // CAFÉ DA MANHÃ
+  // CAFÉ MANHÃ
   // =========================
   {
     id: 1, nome: "Aipim", categoria: "cafe", preco: 15,
